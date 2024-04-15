@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>PICTOS_v1.8</title>
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<link rel="shortcut icon" type="image/png" href="assets/images/interface/favicon.png"/>
+		<script src="assets/js/jquery-3.7.1.js"></script>
+		<script src="assets/js/script-bdd2.js"></script>
+		<script src="assets/js/script-boutons.js"></script>
+		<script src="assets/js/jquery.xdomainajax.js"></script>
+	</head>	
+	<body>  
+		<section class="SectionPrincipale">
+			<!--Zone bandeau supérieur----------------------------------------------------->
+			<div class="BandeauSuperieur ligne">
+				<div class="BoutonParler bouton  colonne">
+					<p class="MotClair">parler</p>
+					<img class="pictobouton" src="assets/images/interface/parler.png">
+				</div>
+				<div class="ZoneAffichagePictos ligne">
+
+				</div>
+				<div class="BoutonEffacer bouton  colonne">
+					<p class="MotClair">gommer</p>
+					<img class="pictobouton" src="assets/images/interface/gomme.png">
+				</div>
+				<div class="BoutonEffacerTout bouton  colonne">
+					<p class="MotClair">effacer</p>
+					<img class="pictobouton" src="assets/images/interface/effacer.png">
+				</div>
+				<div class="BoutonMenu">
+					<a href="#" ondblclick="javascript:document.location='pages/config.html';">
+						<img class="picto" src="assets/images/interface/menu.png" title="Double-clic pour ouvrir le menu">
+					</a>
+				</div>
+			</div>
+			<!--Fin zone bandeau supérieur-->
+
+
+			<!--Zone colonnes sélection vocabulaire------------------------------------------------->
+			<div id="ZoneSelectionPictos" class="ZoneSelectionPictos ligne">
+
+			</div>
+			<!--Fin Zone colonnes sélection vocabulaire-->
+
+
+			<!--Zone popups spécifiques--------------------------------------------------->
+			<div id="ZonePopups"></div>
+			<!--Fin Zone popups spécifiques-->
+
+
+			<!-- Paramètres cachés-->
+			<div class="cache">
+				<div id="parametresConfig"></div>
+			</div>
+
+		</section>
+	</body>
+</html>

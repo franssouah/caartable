@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Configuration</title>
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+		<link rel="shortcut icon" type="image/png" href="assets/images/interface/favicon.png"/>
+		<script src="../assets/js/jquery-3.7.1.js"></script>
+		<script src="../assets/js/script-config.js"></script>
+	</head>	
+	<body>  
+        <!--Bandeau supérieur Boutons-->
+        <section class="ConfigBoutons ligne">
+            <div class="ConfigTitre">
+                <img class="IconeBouton" src="../assets/images/interface/favicon.png">
+                <h2>CAArtable - configuration</h2>
+            </div>
+            <div class="ligne">
+                <a href="../index.html" class="ConfigBoutonAnnuler ConfigBouton ligne">
+                    <img class="IconeBouton" src="../assets/images/interface/annuler.png"/>
+                    <p class="ConfigBoutonTexte">Annuler</p>
+                </a>
+
+                <a href="#" class="ConfigBoutonEnregistrer ConfigBouton ligne">
+                    <img class="IconeBouton" src="../assets/images/interface/enregistrer.png"/>
+                    <p class="ConfigBoutonTexte">Enregistrer</p>
+                </a> 
+
+                <!--<a href="#" class="ConfigBoutonTest ConfigBouton ligne">
+                    <p class="ConfigBoutonTexte">Test lecture Custom</p>
+                </a>--> 
+            </div>
+            
+        </section>
+
+        <!-- Zone d'affichage des options -->
+        <section class="ConfigZoneOptions">
+            <section class="AffichageOptions">
+                <div class="ligne AffichageOptionsLigne">
+                    <div class="selection">
+                        <label for="NbColonnesSelect">Nombre de colonnes affichées :</label>
+                        <select id="NbColonnesSelect">
+                        </select>
+                    </div>
+                    <div class="selection">
+                        <label for="NbPictosSelect">Nombre de pictos par colonne :</label>
+                        <select id="NbPictosSelect">
+                        </select>
+                    </div>
+                    <div class="selection">
+                        <label for="PictosComplex">Complexité des pictos :</label>
+                        <select id="NbPictosSelect">
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                    <div class="selection">
+                        <label for="Voix">Voix :</label>
+                        <select id="Voix">
+                            <option value="garçon">Garçon</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Sélection colonnes et boutons-->
+                <div class="ligne AffichageOptionsLigne">
+                    <div class="colonne">
+                        <h2>Sélectionnez les catégories à afficher :</h2>
+                        <div id="selectionColonnes" class="ligne">
+                        </div>
+                        <p>Pour afficher moins de colonnes et de boutons, faites une sélection vide.</p>
+                    </div>
+                    
+
+                    <div id="selectionBoutons" class="selectionColonne selectionBoutons">
+                    </div>
+
+                    
+                </div>
+                    
+                
+
+            </section>
+
+        </section>
+
+        <!-- Paramètres cachés-->
+			<div class="cache">
+				<div id="parametresConfig"></div>
+			</div>
+
+    </body>
+</html>

@@ -1,0 +1,338 @@
+:root {
+    /* définition des couleurs*/
+	--primary-color: #e6fde6;
+    --secondary-color: #00a0a0;
+    --tertiary-color: #49587b;
+    --noir: #1B1B1B;
+    --blanc: #fefefe;
+    --gris: #e7e7e7;
+    --jaune: #ffd966;
+    --vert: #63d482;
+    --mauve: #9e78d7;
+    --orange: #f4b183;
+    --rose: #fc9ef3;
+    --bleu: #8faadc;
+
+
+    /* définition des polices */
+    --police-texte: arial; 
+}
+
+/* Mise en forme globale 
+****************************************************************/
+.ligne{
+    display: flex;
+    flex-direction: row;
+}
+
+.colonne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* boutons
+****************************************************************/
+.bouton{
+    background-color: var(--tertiary-color);
+    width: 6rem;
+    height: 6rem;
+    margin: .25rem;
+    padding: .2rem;
+    border-radius: 1rem;
+}
+.bouton:hover{
+    box-shadow: 2px 2px 10px 5px rgba(0,0,0,.5);
+}
+
+.pictobouton{
+    margin-top: -.4rem;
+    object-fit: contain;
+    max-height: 4rem;
+    max-width: 4.5rem;
+}
+
+
+/* bouton menu */
+.BoutonMenu{
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-self: end;
+    margin-left: 1rem;
+}
+
+
+/* cartes pictos
+****************************************************************/
+
+.CartePicto{
+    width: 6.5vw;
+    height: 6.5vw;
+    margin: .3vw 0 .3vw .3vw;
+    padding: .3vw;
+    border-radius: 1rem;
+}
+
+.CartePicto:hover{
+    box-shadow: 2px 2px 10px 5px rgba(0,0,0,.5);
+}
+
+.picto{
+    margin-top: -.5vw;
+    object-fit: contain;
+    max-height: 4.5vw;
+    max-width: 4.5vw;
+}
+
+.MotClair{
+    text-align: center;
+    color: var(--blanc);
+    margin-top: -.1rem;
+    font-family: var(--police-texte);
+}
+
+.Mot{
+    text-align: center;
+    color: var(--noir);
+    margin-top: -.1rem;
+    font-family: var(--police-texte);
+}
+
+.MotGras{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.CarteJaune{
+    background-color: var(--jaune);
+}
+
+.CarteVerte{
+    background-color: var(--vert);
+}
+
+.CarteMauve{
+    background-color: var(--mauve);
+}
+
+.CarteOrange{
+    background-color: var(--orange);
+}
+
+.CarteRose{
+    background-color: var(--rose);
+}
+
+.CarteBleue{
+    background-color: var(--bleu);
+}
+
+.CarteGrise{
+    background-color: var(--gris);
+}
+
+.CarteCliquableCategorie{
+    /*border: 3px solid black;*/
+    border-radius: .3rem;
+    box-shadow:inset 0px -2px 3px 5px black;
+    align-self: flex-start;
+
+}
+
+
+
+/* Zones
+****************************************************************/
+.SectionPrincipale{
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.BandeauSuperieur{
+    background-color: var(--secondary-color);
+    width: 100vw;
+    height: 8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.ZoneAffichagePictos{
+    background-color: var(--gris) ;
+    width: 66vw;
+    height: 6rem;
+    margin: .25rem;
+    padding: .2rem;
+    border-radius: 1rem;
+}
+.ZoneAffichagePictos > div {    /*espacement des pictos sélectionnés*/
+    margin-right: 2vw; 
+}
+
+.ZoneSelectionPictos{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 10rem 1rem 0 1rem;
+}
+
+.ColonnePictos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /*align-items: center;*/
+}
+
+
+/* Popups
+***************************************************************/
+.popup {
+    /*width: 7rem;
+    height: 34.5rem;*/
+    position: fixed;
+    top: 0;
+    margin-top: 10rem;
+    z-index: 99;
+    visibility: hidden;
+    /*display: none;*/
+    /*backdrop-filter: grayscale(1) blur(5px);*/
+    border-radius: 1rem;
+    /*border: 5px solid black;*/
+    background-color: var(--noir);
+  }
+
+.popupGauche{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    left: 1rem;
+}
+
+.popupDroite{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    right:1rem;
+}
+
+.visible{
+    visibility: visible;
+}
+
+
+/* Page configuration
+*************************************************************/
+.cache{
+    display: none;
+}
+
+.ConfigTitre{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+.ConfigTitre > h2 {
+    margin-left: 1rem;
+    color: var(--gris);
+}
+
+/* Boutons */
+.ConfigBoutons{
+    justify-content: space-between;
+    height: 5rem;
+    background-color: var(--tertiary-color);
+}
+
+.ConfigBouton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--gris);
+    padding: 0 .5rem 0 .5rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+.IconeBouton{
+    width: 2rem;
+    height: 2rem;
+}
+
+.ConfigBoutonTexte{
+
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+/* affichage des options */
+
+.ConfigZoneOptions{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--gris);
+}
+
+.AffichageOptions{
+    width: 90vw;
+    margin: 6rem 2rem 2rem 2rem;
+}
+
+.AffichageOptionsLigne{
+    justify-content: space-between;
+    padding: 2rem;
+    border-bottom: 1px solid var(--noir);
+    
+}
+
+.selection{
+    margin: 0 2rem 0 2rem;
+}
+
+.selection > label, select {
+    font-size: 1.2rem;
+}
+
+.selectionColonne{
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    align-items: center;
+}
+
+.selectionColonne > select{
+    font-size: .8rem;
+}
+.selectionColonne > label{
+    font-size: 1rem;
+}
+.selectionBouton > select{
+    font-size: .8rem;
+}
+.selectionBouton > label{
+    font-size: 1rem;
+}
+
+.selectionBoutons{
+    border-left: 1px solid var(--noir);
+    padding-left: 2rem;
+}
+.selectionBouton{
+    padding-bottom: 1rem;
+}
+
+

@@ -1,0 +1,39 @@
+{
+    "options" : {
+        "nbColonnes":"13",
+        "hauteurColonnes":"5",
+        "complexite":"1",
+        "voix": "homme"
+    },
+    "colonnes" : [
+        "Phrases",
+        "Personnes",
+        "Actions",
+        "Questions",
+        "Aliments",
+        "Objets",
+        "Decrire",
+        "Couleurs",
+        "Maths",
+        ""
+    ],
+    "largeurColonnes": [
+        "1",
+        "1",
+        "3",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1"
+    ],
+    "boutons" : [
+        "Lieux",
+        "Moments",
+        "Animaux",
+        "Le_corps",
+        "Habits"
+    ]
+}
