@@ -2,88 +2,123 @@
   "categories" : [
       { "nom" : "Phrases",
         "couleur" : "Rose",
-        "pictos1" : ["oui","non","bonjour","merci","s_il_te_plait","je_veux","j_ai","je_vois","j_ai_mal","je_suis_fatigué","j_ai_faim","mal_tête","mal_ventre","j_ai_besoin","ne_sais_pas"],
-        "pictos2" : []
+        "pictos1" : ["oui","non","bonjour","merci","s_il_te_plait","au_revoir","je_veux","j_ai","besoin_aide","j_aime","aime_pas","pas_parler","j_ai_mal","je_suis_fatigué","j_ai_faim","mal_tête","mal_ventre"],
+        "pictos2" : ["je_vois","ne_sais_pas","j_ai_besoin"],
+        "pictos3" : []
       },
       { "nom" : "Personnes",
         "couleur" : "Jaune",
         "pictos1" : ["je","tu","il","elle","moi","toi","maitresse","maitre","nous","eux","garçon","fille","enfants"],
-        "pictos2" : ["maman","papa","parents","bébé","grand-mère","grand-père","grands-parents","n_importe_qui"]
+        "pictos2" : ["maman","papa","parents","bébé","grand-mère","grand-père","grands-parents","tout_le_monde","n_importe_qui"],
+        "pictos3" : ["conducteur","pompier","docteur","infirmière","infirmier","policière","policier"]
       },
       { "nom" : "Actions",
         "couleur" : "Verte",
-        "pictos1" : ["aimer","avoir","aller","chercher","boire","manger","vouloir","écrire","dessiner","effacer","entourer","souligner","barrer","cocher","relier","tracer","colorier","calculer","compter","ouvrir","fermer","écouter","regarder"],
-        "pictos2" : ["attendre","pousser","parler","donner","se_lever","s_asseoir","découper","coller","arrêter","aider","jouer","dormir"]
+        "pictos1" : ["aimer","avoir","aller","chercher","boire","manger","vouloir","écrire","lire","dessiner","effacer","entourer","souligner","barrer","cocher","relier","tracer","colorier","calculer","compter","ouvrir","fermer","écouter","regarder"],
+        "pictos2" : ["attendre","pousser","parler","donner","se_lever","s_asseoir","découper","coller","arrêter","aider","jouer","dormir"],
+        "pictos3" : ["rire","pleurer","montrer","se_cacher","lancer","attraper","sauter","tourner","tomber","marcher","courir","rouler","conduire"]
       },
       { "nom" : "Questions",
         "couleur" : "Mauve",
         "pictos1" : ["qui","quoi","où","quand","pourquoi","comment","combien"],
-        "pictos2" : []
+        "pictos2" : [],
+        "pictos3" : []
       },
       { "nom" : "Aliments",
         "couleur" : "Orange",
-        "pictos1" : ["eau","gâteau","chocolat","bonbon","jus","pomme","banane","orange"],
-        "pictos2" : []
+        "pictos1" : ["eau","gâteau","chocolat","bonbon","jus","pomme","banane"],
+        "pictos2" : ["orange","raisin","poire","pomme_de_terre","carotte","purée","viande","poisson","pizza","pain","oeuf","céréales","crêpes","pâtes","hamburger","fromage","sandwich","frites","riz","salade","semoule","haricots"],
+        "pictos3" : ["tomate","concombre","radis","salade","haricots_verts","citrouille","fraise","framboise","abricot","prune","cerise","melon","kiwi","ananas","pastèque","pamplemousse"]
       },
       { "nom" : "Objets",
         "couleur" : "Orange",
         "pictos1" : ["ciseaux","crayon","feuille","feutre","gomme","règle","stylo","chaise","table","tableau"],
-        "pictos2" : []
+        "pictos2" : [],
+        "pictos3" : []
       },
       { "nom" : "Decrire",
         "couleur" : "Bleue",
-        "pictos1" : ["grand","petit","bien","mal","rapide","lent","pareil","différent","plus","moins","beaucoup","peu","plein","vide","content","triste","en_colère","fatigué"],
-        "pictos2" : []
+        "pictos1" : ["grand","petit","bien","mal","rapide","lent","pareil","différent","plus","moins","content","triste","en_colère","fatigué"],
+        "pictos2" : ["beaucoup","peu","plein","vide"],
+        "pictos3" : ["gros","maigre","gentil","méchant"]
       },
       { "nom" : "Maths",
         "couleur" : "Orange",
         "pictos1" : ["calculer","compter","plus","moins","égal","fois","zéro","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix"],
-        "pictos2" : []
+        "pictos2" : [],
+        "pictos3" : []
       },
       { "nom" : "Lieux",
         "couleur" : "Grise",
-        "pictos1" : ["classe","récréation","cantine","toilettes","école","maison","ici","gauche","droite","haut","bas"],
-        "pictos2" : ["sur","dessous","dans","dehors","ville","village","rue","route","plage","mer","montagne","ciel","espace","lune"]
+        "pictos1" : ["classe","récréation","cantine","toilettes","école","maison","ici","gauche","droite","haut","bas","avant","après"],
+        "pictos2" : ["sur","dessous","dans","dehors","ville","village","rue","route","plage","mer","montagne","ciel","espace","lune"],
+        "pictos3" : []
       },
       { "nom" : "Couleurs",
         "couleur" : "Bleue",
         "pictos1" : ["rouge","bleu","vert","jaune","orange_","rose","violet","gris","marron","blanc","noir"],
-        "pictos2" : []
+        "pictos2" : [],
+        "pictos3" : []
       },
       { "nom" : "Moments",
         "couleur" : "Grise",
-        "pictos1" : ["maintenant","hier","aujourdhui","demain","matin","midi","après-midi","soir","jour","nuit"],
-        "pictos2" : []
+        "pictos1" : ["maintenant","matin","midi","après-midi","soir","jour","nuit"],
+        "pictos2" : ["hier","aujourdhui","demain","avant","après"],
+        "pictos3" : []
       },
       { "nom" : "Animaux",
         "couleur" : "Orange",
-        "pictos1" : ["chat","chien","oiseau","souris","cheval","vache","mouton","poule","lapin","loup","renard"],
-        "pictos2" : ["abeille","mouche","fourmi","araignée","lion","tigre","éléphant","girafe","gazelle","zèbre","rhinocéros","poisson","dauphin","requin","baleine"]
+        "pictos1" : ["chat","chien","oiseau","souris","cheval","vache","canard","mouton","poule","lapin","loup","renard","écureuil"],
+        "pictos2" : ["lion","tigre","éléphant","girafe","gazelle","zèbre","rhinocéros","crocodile","singe","chameau","kangourou","pingouin","poisson","dauphin","requin","baleine"],
+        "pictos3" : ["abeille","mouche","fourmi","araignée","escargot"]
       },
       { "nom" : "Le_corps",
         "couleur" : "Orange",
         "pictos1" : ["tête","corps","ventre","bras","jambe","genou","pied","oeil", "oreille","bouche","nez","cheveux"],
-        "pictos2" : ["coude","main","doigt","orteil","cou"]
+        "pictos2" : ["coude","main","doigt","orteil","cou"],
+        "pictos3" : []
       },
       { "nom" : "Habits",
         "couleur" : "Orange",
         "pictos1" : ["pantalon","T-shirt","pull","chaussures","manteau","chemise","culotte","caleçon","chaussettes","short","jupe","robe"],
-        "pictos2" : ["casquette","chapeau","bonnet","gants","écharpe","capuche"]
+        "pictos2" : ["casquette","chapeau","bonnet","gants","écharpe","capuche"],
+        "pictos3" : []
       },
       { "nom" : "Jouets",
         "couleur" : "Orange",
-        "pictos1" : ["ballon","billes","puzzle","légos","voiture","tracteur","camion","poupée","dinosaure","train","cartes", "bonhomme","jeu_de_société","avion","fusée","hélicoptère"],
-        "pictos2" : []
+        "pictos1" : ["ballon","billes","puzzle","légos","voiture"],
+        "pictos2" : ["tracteur","camion","poupée","dinosaure","train","cartes", "bonhomme","jeu_de_société","avion","fusée","hélicoptère"],
+        "pictos3" : []
       },
       { "nom" : "Mots",
         "couleur" : "Grise",
         "pictos1" : ["le","la","du","de","et","dans","avec"],
-        "pictos2" : ["un","une","les","pour","avec","mon","ma","mes","ton","ta","tes"]
+        "pictos2" : ["un","une","les","des","pour","avec","mon","ma","mes","ton","ta","tes"],
+        "pictos3" : []
       },
       { "nom" : "Vehicules",
         "couleur" : "Orange",
-        "pictos1" : ["voiture","tracteur","camion","bus","train","avion","fusée","hélicoptère","camion-benne","pelleteuse"],
-        "pictos2" : []
+        "pictos1" : ["voiture","tracteur","camion","bus","train","avion","bateau"],
+        "pictos2" : ["taxi","voiture_police","camion_pompier","ambulance","fusée","hélicoptère","camion-benne","pelleteuse","voilier"],
+        "pictos3" : []
+      },
+      { "nom" : "Fruits",
+        "couleur" : "Orange",
+        "pictos1" : ["pomme","banane","orange","raisin","poire"],
+        "pictos2" : ["fraise","framboise","abricot","prune","cerise","melon","kiwi","ananas","pastèque","pamplemousse"],
+        "pictos3" : []
+      },
+      { "nom" : "Légumes",
+        "couleur" : "Orange",
+        "pictos1" : ["pomme_de_terre","carotte","tomate","haricots_verts"],
+        "pictos2" : ["concombre","radis","salade","citrouille"],
+        "pictos3" : []
+      },
+      { "nom" : "Personnages",
+        "couleur" : "Orange",
+        "pictos1" : ["fée","sorcière","magicien","ogre","prince","princesse","reine","roi","chevalier","dragon","monstre","géant","lutin","pirate"],
+        "pictos2" : [],
+        "pictos3" : []
       }
   ]
 }

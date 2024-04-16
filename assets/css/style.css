@@ -206,6 +206,7 @@
     border-radius: 1rem;
     /*border: 5px solid black;*/
     background-color: var(--noir);
+    border: 5px solid var(--noir);
   }
 
 .popupGauche{
@@ -293,8 +294,8 @@
 }
 
 .AffichageOptionsLigne{
-    justify-content: space-between;
-    padding: 2rem;
+    justify-content: space-around;
+    padding: 2rem 2rem 2rem 0;
     border-bottom: 1px solid var(--noir);
     
 }
@@ -310,7 +311,7 @@
 .selectionColonne{
     display: flex;
     flex-direction: column;
-    margin: .5rem;
+    margin: .4rem;
     align-items: center;
 }
 
@@ -320,6 +321,7 @@
 .selectionColonne > label{
     font-size: 1rem;
 }
+
 .selectionBouton > select{
     font-size: .8rem;
 }
@@ -329,10 +331,14 @@
 
 .selectionBoutons{
     border-left: 1px solid var(--noir);
-    padding-left: 2rem;
+    padding-left: .5rem;
+    max-height: 18rem;
+    flex-wrap: wrap;
 }
 .selectionBouton{
     padding-bottom: 1rem;
+    padding-left: .5rem;
+    
 }
 
 

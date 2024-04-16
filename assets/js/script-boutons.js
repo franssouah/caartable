@@ -113,5 +113,5 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
     })
 
 
-},2000)
+},1000)
 });

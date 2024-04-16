@@ -26,14 +26,19 @@
         "1",
         "1",
         "1",
-        "2",
+        "1",
         "1"
     ],
     "boutons" : [
         "Lieux",
         "Moments",
         "Animaux",
+        "Mots",
         "Le_corps",
-        "Habits"
+        "Habits",
+        "",
+        "",
+        "",
+        ""
     ]
 }
