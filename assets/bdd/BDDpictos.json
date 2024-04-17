@@ -27,12 +27,30 @@
       { "nom" : "Aliments",
         "couleur" : "Orange",
         "pictos1" : ["eau","gâteau","chocolat","bonbon","jus","pomme","banane"],
-        "pictos2" : ["orange","raisin","poire","pomme_de_terre","carotte","purée","viande","poisson","pizza","pain","oeuf","céréales","crêpes","pâtes","hamburger","fromage","sandwich","frites","riz","salade","semoule","haricots"],
-        "pictos3" : ["tomate","concombre","radis","salade","haricots_verts","citrouille","fraise","framboise","abricot","prune","cerise","melon","kiwi","ananas","pastèque","pamplemousse"]
+        "pictos2" : ["lait","orange","raisin","poire","pomme_de_terre","carotte","purée","viande","poisson","pizza","pain","oeuf","céréales","crêpes","pâtes","hamburger","fromage","sandwich","frites","riz","salade","semoule","haricots"],
+        "pictos3" : ["tomate","concombre","radis","salade","haricots_verts","citrouille","fraise","framboise","abricot","prune","cerise","melon","kiwi","ananas","pastèque","pamplemousse","sucre","farine","beurre"]
+      },
+      { "nom" : "Cuisiner",
+        "couleur" : "Orange",
+        "pictos1" : ["verre","couteau","fourchette","cuillère","assiette","saladier","bol","fouet","casserole","four"],
+        "pictos2" : ["sucre","farine","beurre","lait","oeuf","chocolat"],
+        "pictos3" : []
+      },
+      { "nom" : "Materiel",
+        "couleur" : "Orange",
+        "pictos1" : ["ciseaux","crayon","feuille","feutre","gomme","règle","stylo","chaise"],
+        "pictos2" : ["crayons_couleur","trousse","cahier","livre","cartable","table","tableau"],
+        "pictos3" : []
       },
       { "nom" : "Objets",
         "couleur" : "Orange",
-        "pictos1" : ["ciseaux","crayon","feuille","feutre","gomme","règle","stylo","chaise","table","tableau"],
+        "pictos1" : ["chaise","table","interrupteur","verre","couteau","fourchette","cuillère","assiette"],
+        "pictos2" : ["tableau"],
+        "pictos3" : []
+      },
+      { "nom" : "Outils",
+        "couleur" : "Orange",
+        "pictos1" : ["tournevis","marteau","scie","pelle","pince","balai"],
         "pictos2" : [],
         "pictos3" : []
       },
