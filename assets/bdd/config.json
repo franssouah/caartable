@@ -2,7 +2,7 @@
     "options" : {
         "nbColonnes":"12",
         "hauteurColonnes":"5",
-        "complexite":"1",
+        "complexite":"2",
         "voix": "homme"
     },
     "colonnes" : [
@@ -10,15 +10,15 @@
         "Personnes",
         "Actions",
         "Questions",
-        "Aliments",
-        "Objets",
-        "Decrire",
-        "Couleurs",
+        "Materiel",
         "Maths",
+        "Decrire",
+        "Lieux",
+        "",
         ""
     ],
     "largeurColonnes": [
-        "1",
+        "2",
         "1",
         "3",
         "1",
@@ -30,11 +30,11 @@
         "1"
     ],
     "boutons" : [
-        "Lieux",
+        "Jouets",
         "Moments",
         "Animaux",
         "Mots",
-        "Le_corps",
+        "Personnages",
         "",
         "",
         "",
