@@ -5,6 +5,7 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
     /* sélection des boutons
     ***************************************************/
     const BoutonParler=$(".BoutonParler");
+    const BoutonParlerStop=$(".BoutonParlerStop");
     const BoutonEffacer=$(".BoutonEffacer");
     const BoutonEffacerTout=$(".BoutonEffacerTout");
 
@@ -18,18 +19,29 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
         //récupération id et contenu carte cliquée
             var idClick=this.getAttribute('id');
             var CarteCliquee = $('#'+idClick);
-            var ContenuCarte = CarteCliquee[0].innerHTML;
-
+            const ContenuCarte = CarteCliquee[0].innerHTML;
+            //console.log(ContenuCarte);
 
         //affichage dans la zoneAffichagePictos
             var NbCartesChoisies = ZoneAffichagePictos.children().length;
             if (NbCartesChoisies<10){
                 ZoneAffichagePictos.append(ContenuCarte);
+                console.log(ZoneAffichagePictos.children().last());
+                ZoneAffichagePictos.children().last().addClass('PictoSelect'+NbCartesChoisies);
             }
         
         //lecture fichier audio
             $("#audio-"+idClick)[0].play();
     })
+
+    /* Suppression d'un picto sélectionné :
+    *****************************************************/
+    /*for($i=0; $i<10; $i++){
+        $('.PictoSelect'+$i).on("click", function(){
+            this.remove();
+        })
+    }*/
+    //--> ne fonctionne pas : l'event ne peut pas se déclencher car la div n'existait pas au chargement de la page...
 
 
     /* Au clic sur BoutonEffacer
@@ -45,45 +57,43 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
     /* Au clic sur BoutonParler
     ***************************************************/
     BoutonParler.on("click", function(){
-        //définition de la longueur de la zone affichage
+        // définition de la longueur de la zone affichage
         var NbPictos=ZoneAffichagePictos.children().length;
 
-        // source : https://forum.alsacreations.com/topic-2-88721-1-Lire-plusisieurs-mp3-en-html-css-ou-js.html
+        // compilation des audios sélectionnés dans un tableau
         var audios=[];
         for ($i=0; $i<NbPictos; $i++){
             var IdAudioPictoI=ZoneAffichagePictos.children()[$i].lastElementChild.getAttribute('id');
             audios[$i]=$("#"+IdAudioPictoI)[0];
         }
-        console.log(audios[0]);
-        audios[0].play();
-        setTimeout(() =>{
-            audios[1].play();
-            setTimeout(() =>{
-                audios[2].play();
-                setTimeout(() =>{
-                    audios[3].play();
-                    setTimeout(() =>{
-                        audios[4].play();
-                        setTimeout(() =>{
-                            audios[5].play();
-                            setTimeout(() =>{
-                                audios[6].play();
-                                setTimeout(() =>{
-                                    audios[7].play();
-                                    setTimeout(() =>{
-                                        audios[8].play();
-                                        setTimeout(() =>{
-                                            audios[9].play();
-                                        },1000)
-                                    },1000)
-                                },1000)
-                            },1000)
-                        },1000)
-                    },1000)
-                },1000)
-            },1000)
-        },1000)
-     })
+
+        // Ajout/retrait de classes pour remplacer le boutonParler par Stop
+        BoutonParler.addClass('cache');
+        BoutonParlerStop.removeClass('cache');
+
+        // fonction gérant la lecture audio et l'arrêt
+        function fonctionLectureAudios($i){
+            // utilisation d'une condition if car la boucle for ne peut contenir de setTimeOut (synchrone VS asynchrone)
+            if($i<NbPictos){
+                audios[$i].play();
+                $i++;
+                //condition d'arrêt :
+                BoutonParlerStop.on("click", function(){
+                    $i=99;
+                })
+                //Timer pour passer au suivant (basé sur la durée de l'audio) :
+                var audioSuivant = function(){
+                    fonctionLectureAudios($i);  
+                };
+                setTimeout(audioSuivant, ((audios[$i-1].duration)*1000+100));
+            }else{
+                BoutonParler.removeClass('cache');
+                BoutonParlerStop.addClass('cache');
+            }
+        }
+        
+        fonctionLectureAudios(0);
+    })
     
     /* Ouverture des popups au clic sur boutons Catégories
     **************************************************/
