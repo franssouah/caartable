@@ -1,5 +1,20 @@
 $(document).ready(function() {  /* chargement du DOM */
 
+// récupération de la BDD (nécessaire pour le fonctionnement du boutonRecherche)
+function fonctionAccesBDD(){
+    fetch('assets/bdd/BDDpictos.json')
+        .then(response => response.json())
+        .then(data => {
+            BanquePictos = data;
+            NbCategories = BanquePictos.categories.length;
+        })
+        .catch(error => console.error('Erreur lors du chargement du fichier BDDpictos.JSON :', error));
+}
+var BanquePictos;
+var NbCategories;
+fonctionAccesBDD();
+
+
 setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel ajax (sinon le mappage des carte cliquables ne fonctionne pas)
 
     /* sélection des boutons
@@ -8,6 +23,7 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
     const BoutonParlerStop=$(".BoutonParlerStop");
     const BoutonEffacer=$(".BoutonEffacer");
     const BoutonEffacerTout=$(".BoutonEffacerTout");
+    const BoutonRecherche=$(".BoutonRecherche");
 
     /* sélection des zones
     ***************************************************/
@@ -27,7 +43,7 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
             if (NbCartesChoisies<10){
                 ZoneAffichagePictos.append(ContenuCarte);
                 console.log(ZoneAffichagePictos.children().last());
-                ZoneAffichagePictos.children().last().addClass('PictoSelect'+NbCartesChoisies);
+                //ZoneAffichagePictos.children().last().addClass('PictoSelect'+NbCartesChoisies);
             }
         
         //lecture fichier audio
@@ -94,6 +110,47 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
         
         fonctionLectureAudios(0);
     })
+
+    /* Au clic sur le BoutonRecherche 
+    **************************************************/
+    function fonctionRecherche(PictosCateg, texteRecherche){
+        // paramétrage du chemin des sons
+        var cheminSons;
+        if ($('#voix').text()=== "fille"){
+            cheminSons = "sonsF";
+        }
+        if ($('#voix').text()=== "garçon"){
+            cheminSons = "sonsG";
+        }
+        // parcours des catégories
+        var NbPictosCateg = PictosCateg.length;
+        for ($j=0 ; $j<NbPictosCateg; $j++){
+            if (PictosCateg[$j] === texteRecherche){
+                // affichage dans la ZoneAffichagePictos
+                    var NbCartesChoisies = ZoneAffichagePictos.children().length;
+                    if (NbCartesChoisies<10){
+                        ZoneAffichagePictos.append('<div class="colonne"><p class="Mot">'+texteRecherche+'</p><img class="picto" src="assets/images/pictos/'+texteRecherche+'.png"><audio id="audio-'+texteRecherche+'" src="assets/'+cheminSons+'/'+texteRecherche+'.mp3"></audio></div>');
+                    }
+                //lecture fichier audio
+                    $("#audio-"+texteRecherche)[0].play();
+                // fin de la recherche
+                    $i=999;           
+            }
+        }
+    }
+    
+    BoutonRecherche.on("click", function(){
+        // récupération du texte tapé
+            var texteRecherche = $('#recherche').val();
+        // recherche dans la BDD
+            // parcours catégories
+            for ($i=0 ; $i<NbCategories; $i++){
+                fonctionRecherche(BanquePictos.categories[$i].pictos1, texteRecherche);
+                fonctionRecherche(BanquePictos.categories[$i].pictos2, texteRecherche);
+                fonctionRecherche(BanquePictos.categories[$i].pictos3, texteRecherche);
+            }   
+    })
+
     
     /* Ouverture des popups au clic sur boutons Catégories
     **************************************************/

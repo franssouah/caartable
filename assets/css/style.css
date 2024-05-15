@@ -35,7 +35,7 @@
 ****************************************************************/
 .bouton{
     background-color: var(--tertiary-color);
-    width: 6rem;
+    width: 5.5rem;
     height: 6rem;
     margin: .25rem;
     padding: .2rem;
@@ -72,6 +72,31 @@
 	0% {transform: rotateZ(0deg);}
 	50% {transform: rotateZ(180deg);}
 	100% {transform: rotateZ(360deg);}
+}
+
+/* zone recherche */
+.zoneRecherche{
+    margin-top: 2rem;
+    align-items: center;
+    visibility: hidden;
+}
+
+#recherche{
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.BoutonRecherche{
+    width: 2rem;
+    height: 2rem;
+}
+
+.BoutonRechercheImage{
+    object-fit: contain;
+    max-height: 2rem;
+    max-width: 2rem;
 }
 
 
@@ -176,7 +201,7 @@
 .BandeauSuperieur{
     background-color: var(--secondary-color);
     width: 100vw;
-    height: 8rem;
+    height: 7.5rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -185,7 +210,7 @@
 
 .ZoneAffichagePictos{
     background-color: var(--gris) ;
-    width: 66vw;
+    width: 62.5vw;
     height: 6rem;
     margin: .25rem;
     padding: .2rem;

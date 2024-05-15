@@ -1,9 +1,10 @@
 {
     "options" : {
-        "nbColonnes":"12",
+        "nbColonnes":"11",
         "hauteurColonnes":"5",
         "complexite":"2",
-        "voix": "homme"
+        "voix": "garçon",
+        "recherche": "oui"
     },
     "colonnes" : [
         "Phrases",
@@ -18,7 +19,7 @@
         ""
     ],
     "largeurColonnes": [
-        "2",
+        "1",
         "1",
         "3",
         "1",

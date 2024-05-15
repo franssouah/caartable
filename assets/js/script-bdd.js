@@ -1,7 +1,16 @@
+//Script BDD
+
+/* SOMMAIRE */
+//1// Chargement des paramètres de configuration
+//2// Requête fetch pour récupérer la BDD
+//3// fonctions d'affichage des pictos
+//4// Ajustement du CSS 
+//5// Appels 
+
 $(document).ready(function() {  /* chargement du DOM */
 
-    /* Chargement des paramètres de configuration
-    *********************************************************/
+    /* 1// Chargement des paramètres de configuration
+*********************************************************/
     
     function fonctionLectureConfig(){
         // récupération des données du fichier config.json
@@ -16,21 +25,33 @@ $(document).ready(function() {  /* chargement du DOM */
 
     function fonctionLectureConfigCustom(){
         // récupération des données de config stockées en local (localStorage / ConfigCustom)
-        var sessionConfigCustom = JSON.parse(localStorage.getItem("ConfigCustom"));
-        //console.log(sessionConfigCustom);
-        //console.log(sessionConfigCustom.options.hauteurColonnes);
+            var sessionConfigCustom = JSON.parse(localStorage.getItem("ConfigCustom"));
 
         // Lecture du nb de colonnes à afficher et stockage dans le html (#parametresConfig)
-        var nbColonnes = sessionConfigCustom.options.nbColonnes;
-        $('#parametresConfig').append('<div id="nbColonnes">'+nbColonnes+'</div>');
+            var nbColonnes = sessionConfigCustom.options.nbColonnes;
+            $('#parametresConfig').append('<div id="nbColonnes">'+nbColonnes+'</div>');
 
         // Lecture de la hauteur et stockage dans le html (#parametresConfig)
-        var hauteurColonnes = sessionConfigCustom.options.hauteurColonnes;
-        $('#parametresConfig').append('<div id="hauteurColonnes">'+hauteurColonnes+'</div>');
+            var hauteurColonnes = sessionConfigCustom.options.hauteurColonnes;
+            $('#parametresConfig').append('<div id="hauteurColonnes">'+hauteurColonnes+'</div>');
 
         // Lecture de la complexité choisie
-        var complexite = sessionConfigCustom.options.complexite;
-        $('#parametresConfig').append('<div id="complexite">'+complexite+'</div>');
+            var complexite = sessionConfigCustom.options.complexite;
+            $('#parametresConfig').append('<div id="complexite">'+complexite+'</div>');
+
+        // Lecture de la voix choisie
+            var voix = sessionConfigCustom.options.voix;
+            $('#parametresConfig').append('<div id="voix">'+voix+'</div>');
+
+        // Lecture et application du choix de l'option recherche
+            var recherche = sessionConfigCustom.options.recherche;
+            $('#parametresConfig').append('<div id="BoutonRecherche">'+recherche+'</div>');
+            if (recherche === "oui"){
+                $('.zoneRecherche').addClass("visible");
+            }
+            if (recherche === "non" && $('.zoneRecherche').hasClass("visible")){
+                $('.zoneRecherche').removeClass("visible");
+            }
 
         // Lecture et affichage dans le html "#ZoneSelectionPictos" des contenus des colonnes + stockage dans le html (#parametresConfig) + injection des popups correspondants
 
@@ -60,20 +81,25 @@ $(document).ready(function() {  /* chargement du DOM */
                 $('#ZonePopups').append('<div class="popup popupDroite Popup'+bouton+'"></div>');
         }
     }
+
+    // vérification de l'existance d'une config custom
     if (localStorage.getItem("ConfigCustom")===null){
         fonctionLectureConfig();
     }
+    // lecture de la config custom
     fonctionLectureConfigCustom();
     
 
-    /* Requête fetch pour récupérer la BDD
-    *********************************************************/
+    /* 2// Requête fetch pour récupérer la BDD
+*********************************************************/
     function fonctionAccesBDD(){
         fetch('assets/bdd/BDDpictos.json')
             .then(response => response.json())
             .then(data => {
                 BanquePictos = data;
                 NbCategories = BanquePictos.categories.length;
+                // stockage dans le HTML pour réutilisation par le moteur de recherche
+                //$('#bdd').append('<div class="contenuBDD">'+BanquePictos+'</div>');
             })
             .catch(error => console.error('Erreur lors du chargement du fichier BDDpictos.JSON :', error));
     }
@@ -84,13 +110,23 @@ $(document).ready(function() {  /* chargement du DOM */
     
     
     
-    /* fonctions d'affichage des pictos
-    *********************************************************/
+    /* 3// fonctions d'affichage des pictos
+*********************************************************/
     function fonctionAffichageColonne(categorie,largeur){
         
         //variables liées à la catégorie
         var colonne = $('.ColonnePictos'+categorie);
         var popup = $('.Popup'+categorie);
+
+        // choix de la voix et paramétrage du chemin des sons
+        var cheminSons;
+        if ($('#voix').text()=== "fille"){
+            cheminSons = "sonsF";
+        }
+        if ($('#voix').text()=== "garçon"){
+            cheminSons = "sonsG";
+        }
+        console.log(cheminSons);
                 
         // extraction de la bonne catégorie
         for (var i=0 ; i<NbCategories; i++){
@@ -104,7 +140,7 @@ $(document).ready(function() {  /* chargement du DOM */
             // Nb de pictos en fonction de la hauteur et largeur choisies
             for (var i=0; i<((largeur*hauteur)-1); i++){
                 var mot=BanquePictosCategorie.pictos1[i];
-                colonne.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/sons/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+                colonne.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
                 }
                 // Ajustement de la largeur
                 colonne.css('width', (largeur*dimension)+'vw');
@@ -139,6 +175,17 @@ $(document).ready(function() {  /* chargement du DOM */
     
 
     function fonctionRemplissagePopup(popup,BanquePictosCategorie,couleur){
+        // choix de la voix et paramétrage du chemin des sons
+        var cheminSons;
+        //console.log($('#Voix').text());
+        if ($('#voix').text()=== "fille"){
+            cheminSons = "sonsF";
+        }
+        if ($('#voix').text()=== "garçon"){
+            cheminSons = "sonsG";
+        }
+        //console.log(cheminSons);
+
         // comptage nb de pictos à afficher
         var NbPictos1 = BanquePictosCategorie.pictos1.length;
         var NbPictos2 = BanquePictosCategorie.pictos2.length;
@@ -150,14 +197,14 @@ $(document).ready(function() {  /* chargement du DOM */
         // injection des pictos 1 dans le popup
         for (var i=0; i<NbPictos1; i++){
             var mot=BanquePictosCategorie['pictos1'][i];
-            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/sons/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
         }
 
         // injection des pictos 2 dans le popup
         if ($('#complexite').text()>1){
             for (var i=0; i<NbPictos2; i++){
                 var mot=BanquePictosCategorie['pictos2'][i];
-                popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/sons/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+                popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
             }    
         }
 
@@ -165,7 +212,7 @@ $(document).ready(function() {  /* chargement du DOM */
         if ($('#complexite').text()>2){
             for (var i=0; i<NbPictos3; i++){
             var mot=BanquePictosCategorie.pictos3[i];
-            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/sons/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
             }    
         }
 
@@ -173,34 +220,38 @@ $(document).ready(function() {  /* chargement du DOM */
         popup.append('<div class="CarteCliquable colonne"><div class="colonne"><img class="pictoRetour" src="assets/images/interface/retour.png"></div></div>');
         
         //Ajustement de la largeur des popups
-        popup.css('width',Math.ceil((NbPictos+1)/hauteur)*dimension+'vw'); 
+        popup.css('width',Math.ceil((NbPictos+1)/hauteur)*dimension+1+'vw'); 
     }
 
 
-    /* Ajustement du CSS 
-    *****************************************************/
+    /* 4// Ajustement du CSS 
+*****************************************************/
         // création de la variable dimension selon le nb de colonnes à afficher :
         var dimension = 97/$('#nbColonnes').text();
-        //console.log(dimension);
+        //console.log('dimension : '+dimension);
 
         // récupération du nb de pictos par colonne :
         var hauteur = $('#hauteurColonnes').text();
 
         //ajustement de la hauteur de colonne :
-        $('.ColonnePictos').css('height',(hauteur*(dimension+0.5))+'vw');
+        $('.ColonnePictos').css('height',hauteur*8+'vw');
+        //$('.ColonnePictos').css('width', dimension+1+'vw');
 
         //Ajustement de la hauteur et largeur des popups
-        $('.popup').css('height',(hauteur*(dimension+0.3))+'vw');
+        $('.popup').css('height',hauteur*8+'vw');
         //$('.popup').css('width',Math.ceil(NbPictos/hauteur)*dimension+'vw'); 
 
         // Ajustement des dimensions des cartes pictos :
-        $('.CartePicto').css('width',(0.8*dimension)+'vw');
-        $('.CartePicto').css('height',(0.8*dimension)+'vw');
+        //$('.CartePicto').css('width',(dimension*0.9)+'vw');
+        //$('.CartePicto').css('height',(dimension*0.9)+'vw');
+        if ($('#nbColonnes').text()>13){
+            $('.CartePicto').css('width','5vw');
+        }
             // --> non fonctionnel *******************************************//
  
 
-    /* Appels 
-    **************************************************/
+    /* 5// Appels 
+**************************************************/
 
     setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel ajax (sinon le mappage des cartes cliquables ne fonctionne pas)
 

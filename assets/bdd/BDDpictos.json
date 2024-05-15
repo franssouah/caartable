@@ -3,7 +3,7 @@
       { "nom" : "Phrases",
         "couleur" : "Rose",
         "pictos1" : ["oui","non","bonjour","merci","s_il_te_plait","au_revoir","je_veux","j_ai","besoin_aide","j_aime","aime_pas","pas_parler","j_ai_mal","je_suis_fatigué","j_ai_faim","mal_tête","mal_ventre"],
-        "pictos2" : ["je_vois","ne_sais_pas","j_ai_besoin"],
+        "pictos2" : ["je_vois","ne_sais_pas","j_ai_besoin","j_ai_fini"],
         "pictos3" : []
       },
       { "nom" : "Personnes",
@@ -56,9 +56,9 @@
       },
       { "nom" : "Decrire",
         "couleur" : "Bleue",
-        "pictos1" : ["grand","petit","bien","mal","rapide","lent","pareil","différent","plus","moins","content","triste","en_colère","fatigué"],
+        "pictos1" : ["super","nul","grand","petit","bien","mal","rapide","lent","pareil","différent","plus","moins","content","triste","en_colère","fatigué"],
         "pictos2" : ["beaucoup","peu","plein","vide"],
-        "pictos3" : ["gros","maigre","gentil","méchant"]
+        "pictos3" : ["gros","maigre","gentil","méchant","beau","moche","laid","doux","dur","dégoûtant","beurk","miam"]
       },
       { "nom" : "Maths",
         "couleur" : "Orange",
@@ -88,7 +88,7 @@
         "couleur" : "Orange",
         "pictos1" : ["chat","chien","oiseau","souris","cheval","vache","canard","mouton","poule","lapin","loup","renard","écureuil"],
         "pictos2" : ["lion","tigre","éléphant","girafe","gazelle","zèbre","rhinocéros","crocodile","singe","chameau","kangourou","pingouin","poisson","dauphin","requin","baleine"],
-        "pictos3" : ["abeille","mouche","fourmi","araignée","escargot"]
+        "pictos3" : ["abeille","mouche","moustique","fourmi","araignée","escargot"]
       },
       { "nom" : "Le_corps",
         "couleur" : "Orange",
@@ -111,7 +111,7 @@
       { "nom" : "Mots",
         "couleur" : "Grise",
         "pictos1" : ["le","la","du","de","et","dans","avec"],
-        "pictos2" : ["un","une","les","des","pour","avec","mon","ma","mes","ton","ta","tes"],
+        "pictos2" : ["un","une","les","des","pour","avec","à","au","mon","ma","mes","ton","ta","tes"],
         "pictos3" : []
       },
       { "nom" : "Vehicules",
@@ -136,6 +136,12 @@
         "couleur" : "Orange",
         "pictos1" : ["fée","sorcière","magicien","ogre","prince","princesse","reine","roi","chevalier","dragon","monstre","géant","lutin","pirate"],
         "pictos2" : [],
+        "pictos3" : []
+      },
+      { "nom" : "Musique",
+        "couleur" : "Orange",
+        "pictos1" : ["musique_","piano","guitare","trompette","tambourin","violon"],
+        "pictos2" : ["saxophone","violoncelle","flûte","batterie","orchestre","microphone","maracas","xylophone","tuba","ukulélé"],
         "pictos3" : []
       }
   ]
