@@ -56,7 +56,7 @@
       },
       { "nom" : "Decrire",
         "couleur" : "Bleue",
-        "pictos1" : ["super","nul","grand","petit","bien","mal","rapide","lent","pareil","différent","plus","moins","content","triste","en_colère","fatigué"],
+        "pictos1" : ["super","grand","petit","bien","mal","rapide","lent","pareil","différent","plus","moins","content","triste","en_colère","fatigué"],
         "pictos2" : ["beaucoup","peu","plein","vide"],
         "pictos3" : ["gros","maigre","gentil","méchant","beau","moche","laid","doux","dur","dégoûtant","beurk","miam"]
       },
