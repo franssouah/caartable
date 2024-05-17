@@ -4,7 +4,7 @@
         "hauteurColonnes":"5",
         "complexite":"2",
         "voix": "garçon",
-        "recherche": "oui"
+        "recherche": "non"
     },
     "colonnes" : [
         "Phrases",

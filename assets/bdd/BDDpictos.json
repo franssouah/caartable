@@ -110,7 +110,7 @@
       },
       { "nom" : "Mots",
         "couleur" : "Grise",
-        "pictos1" : ["le","la","du","de","et","dans","avec"],
+        "pictos1" : ["le","la","du","de","et","dans"],
         "pictos2" : ["un","une","les","des","pour","avec","à","au","mon","ma","mes","ton","ta","tes","c1est"],
         "pictos3" : []
       },

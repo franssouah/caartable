@@ -33,6 +33,10 @@
     width: 4.5vw;*/
 }
 
+h3{
+    margin: .5rem;
+}
+
 /* boutons
 ****************************************************************/
 .bouton{
@@ -341,14 +345,17 @@
 
 .AffichageOptions{
     width: 90vw;
-    margin: 6rem 2rem 2rem 2rem;
+    margin: 6rem 2rem 0rem 2rem;
 }
 
 .AffichageOptionsLigne{
     justify-content: space-around;
-    padding: 2rem 2rem 2rem 0;
+    padding: 1.5rem 1.5rem .5rem 0;
     border-bottom: 1px solid var(--noir);
     max-width: 95vw;
+}
+.AffichageOptionsLigne:last-of-type{
+    border-bottom: 0;
 }
 
 .AffichageOptionsZoneColonnes{
@@ -396,4 +403,48 @@
     
 }
 
+/* Zone crédits */
+.ConfigZoneCredits{
+    background-color: var(--tertiary-color);
+    color: var(--blanc);
+    /*margin-top: -5rem;*/
+    margin: .5rem;
+    width: 98.8vw;
+    position: absolute;
+    bottom: .5rem;
+}
+.ConfigZoneCreditsElement{
+    width: 20vw;
+    border-right: 1px solid var(--gris);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ConfigZoneCreditsElement:last-of-type{
+    border-right: 0;
+}
+
+.logo_ARASAAC{
+    width: 10rem;
+}
+
+.large{
+    width: 30vw;
+}
+
+.ConfigZoneCreditsElement > p{
+    text-align: center;
+}
+
+.lienClair{
+    color: var(--primary-color);
+}
+.lienClair:visited{
+    color: var(--secondary-color);
+}
+.IconeMail{
+    margin-top: 1rem;
+    width: 4rem;
+    height: auto;
+}
 
