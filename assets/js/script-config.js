@@ -198,7 +198,6 @@ $(document).ready(function() {  /* chargement du DOM */
 
     /* Sélection des zones */
     $BoutonSauvegarder=$(".ConfigBoutonEnregistrer");
-    $BoutonTest=$('.ConfigBoutonTest');
     
     /* Injection du HTML pour sélectionner les colonnes */
         $ZoneColonnes=$('#selectionColonnes');
@@ -261,15 +260,6 @@ $(document).ready(function() {  /* chargement du DOM */
     setTimeout(() =>{
         fonctionLectureConfigCustom();
     },100)
-
-
-    $BoutonTest.on("click", function(){
-        fonctionEcritureConfig();
-        setTimeout(() =>{
-            fonctionCalculNbColonnes();
-        },100)
-        console.log(JSON.parse(localStorage.getItem("ConfigCustom")));
-    })
     
     // sauvegarde des paramètres et retour à l'appli
     $BoutonSauvegarder.on("click", function(){

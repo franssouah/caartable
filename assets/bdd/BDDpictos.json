@@ -2,21 +2,21 @@
   "categories" : [
       { "nom" : "Phrases",
         "couleur" : "Rose",
-        "pictos1" : ["oui","non","bonjour","merci","s_il_te_plait","au_revoir","je_veux","j_ai","besoin_aide","j_aime","aime_pas","pas_parler","j_ai_mal","je_suis_fatigué","j_ai_faim","mal_tête","mal_ventre"],
-        "pictos2" : ["je_vois","ne_sais_pas","j_ai_besoin","j_ai_fini"],
+        "pictos1" : ["oui","non","bonjour","merci","s1il_te_plait","au_revoir","je_veux","j1ai","besoin_aide","j1aime","aime_pas","pas_parler","j1ai_mal","je_suis_fatigué","j1ai_faim","mal_tête","mal_ventre"],
+        "pictos2" : ["je_vois","ne_sais_pas","j1ai_besoin","j1ai_fini"],
         "pictos3" : []
       },
       { "nom" : "Personnes",
         "couleur" : "Jaune",
         "pictos1" : ["je","tu","il","elle","moi","toi","maitresse","maitre","nous","eux","garçon","fille","enfants"],
-        "pictos2" : ["maman","papa","parents","bébé","grand-mère","grand-père","grands-parents","tout_le_monde","n_importe_qui"],
+        "pictos2" : ["maman","papa","parents","bébé","grand-mère","grand-père","grands-parents","tout_le_monde","n1importe_qui"],
         "pictos3" : ["conducteur","pompier","docteur","infirmière","infirmier","policière","policier"]
       },
       { "nom" : "Actions",
         "couleur" : "Verte",
         "pictos1" : ["aimer","avoir","aller","chercher","boire","manger","vouloir","écrire","lire","dessiner","effacer","entourer","souligner","barrer","cocher","relier","tracer","colorier","calculer","compter","ouvrir","fermer","écouter","regarder"],
-        "pictos2" : ["attendre","pousser","parler","donner","se_lever","s_asseoir","découper","coller","arrêter","aider","jouer","dormir"],
-        "pictos3" : ["rire","pleurer","montrer","se_cacher","lancer","attraper","sauter","tourner","tomber","marcher","courir","rouler","conduire"]
+        "pictos2" : ["attendre","pousser","parler","donner","se_lever","s1asseoir","découper","coller","arrêter","aider","jouer","dormir"],
+        "pictos3" : ["mettre","rire","pleurer","montrer","se_cacher","lancer","attraper","sauter","tourner","tomber","marcher","courir","rouler","conduire"]
       },
       { "nom" : "Questions",
         "couleur" : "Mauve",
@@ -45,8 +45,8 @@
       { "nom" : "Objets",
         "couleur" : "Orange",
         "pictos1" : ["chaise","table","interrupteur","verre","couteau","fourchette","cuillère","assiette"],
-        "pictos2" : ["tableau"],
-        "pictos3" : []
+        "pictos2" : ["ciseaux","crayon","feuille","feutre","gomme","règle","stylo","chaise","crayons_couleur","trousse","cahier","livre","cartable","table","tableau"],
+        "pictos3" : ["tournevis","marteau","scie","pelle","pince","balai"]
       },
       { "nom" : "Outils",
         "couleur" : "Orange",
@@ -57,8 +57,8 @@
       { "nom" : "Decrire",
         "couleur" : "Bleue",
         "pictos1" : ["super","grand","petit","bien","mal","rapide","lent","pareil","différent","plus","moins","content","triste","en_colère","fatigué"],
-        "pictos2" : ["beaucoup","peu","plein","vide"],
-        "pictos3" : ["gros","maigre","gentil","méchant","beau","moche","laid","doux","dur","dégoûtant","beurk","miam"]
+        "pictos2" : ["beaucoup","peu","plein","vide","dégoûtant","beurk","miam"],
+        "pictos3" : ["gros","maigre","gentil","méchant","beau","moche","laid","doux","dur","rouge","bleu","vert","jaune","orange_","rose","violet","gris","marron","blanc","noir"]
       },
       { "nom" : "Maths",
         "couleur" : "Orange",
@@ -92,9 +92,9 @@
       },
       { "nom" : "Le_corps",
         "couleur" : "Orange",
-        "pictos1" : ["tête","corps","ventre","bras","jambe","genou","pied","oeil", "oreille","bouche","nez","cheveux"],
-        "pictos2" : ["coude","main","doigt","orteil","cou"],
-        "pictos3" : []
+        "pictos1" : ["tête","corps","ventre","bras","jambe","oeil", "oreille","bouche","nez","cheveux"],
+        "pictos2" : ["coude","main","doigt","genou","pied"],
+        "pictos3" : ["orteil","cou","fesses"]
       },
       { "nom" : "Habits",
         "couleur" : "Orange",
@@ -111,12 +111,12 @@
       { "nom" : "Mots",
         "couleur" : "Grise",
         "pictos1" : ["le","la","du","de","et","dans","avec"],
-        "pictos2" : ["un","une","les","des","pour","avec","à","au","mon","ma","mes","ton","ta","tes"],
+        "pictos2" : ["un","une","les","des","pour","avec","à","au","mon","ma","mes","ton","ta","tes","c1est"],
         "pictos3" : []
       },
       { "nom" : "Vehicules",
         "couleur" : "Orange",
-        "pictos1" : ["voiture","tracteur","camion","bus","train","avion","bateau"],
+        "pictos1" : ["voiture","tracteur","camion","bus","train","avion","bateau","vélo","moto"],
         "pictos2" : ["taxi","voiture_police","camion_pompier","ambulance","fusée","hélicoptère","camion-benne","pelleteuse","voilier"],
         "pictos3" : []
       },
@@ -143,6 +143,18 @@
         "pictos1" : ["musique_","piano","guitare","trompette","tambourin","violon"],
         "pictos2" : ["saxophone","violoncelle","flûte","batterie","orchestre","microphone","maracas","xylophone","tuba","ukulélé"],
         "pictos3" : []
+      },
+      { "nom" : "Sport",
+        "couleur" : "Verte",
+        "pictos1" : ["foot","basket","tennis","vélo","jeu_de_ballon","course"],
+        "pictos2" : ["lancer","attraper","sauter","tourner","tomber","marcher","courir","rouler","jouer"],
+        "pictos3" : ["se_cacher","attendre","pousser","se_lever","s1asseoir","arrêter","aider"]
+      },
+      { "nom" : "Consignes",
+        "couleur" : "Verte",
+        "pictos1" : ["écrire","lire","dessiner","effacer","entourer","souligner","barrer","cocher","relier","tracer","colorier","découper","coller","calculer","compter","ouvrir","fermer","écouter","regarder"],
+        "pictos2" : ["aller","chercher","attendre","parler","donner","se_lever","s1asseoir","arrêter","aider"],
+        "pictos3" : ["mettre","montrer"]
       }
   ]
 }

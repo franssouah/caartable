@@ -140,8 +140,14 @@ $(document).ready(function() {  /* chargement du DOM */
             // Nb de pictos en fonction de la hauteur et largeur choisies
             for (var i=0; i<((largeur*hauteur)-1); i++){
                 var mot=BanquePictosCategorie.pictos1[i];
-                colonne.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+
+                // remplacement des caractères "_" par des espaces et "1" par "'" pour l'affichage
+                var motAffiche = mot.replace("1", "'").replace("_", " ").replace("_", " ").replace("_", " ");
+
+                // Affichage du picto dans la colonne
+                colonne.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+motAffiche+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
                 }
+
                 // Ajustement de la largeur
                 colonne.css('width', (largeur*dimension)+'vw');
             
@@ -197,14 +203,20 @@ $(document).ready(function() {  /* chargement du DOM */
         // injection des pictos 1 dans le popup
         for (var i=0; i<NbPictos1; i++){
             var mot=BanquePictosCategorie['pictos1'][i];
-            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+            // remplacement des caractères "_" par des espaces pour l'affichage
+            var motAffiche = mot.replace("1", "'").replace("_", " ").replace("_", " ").replace("_", " ");
+            // Affichage du picto dans le popup
+            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+motAffiche+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
         }
 
         // injection des pictos 2 dans le popup
         if ($('#complexite').text()>1){
             for (var i=0; i<NbPictos2; i++){
                 var mot=BanquePictosCategorie['pictos2'][i];
-                popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+                // remplacement des caractères "_" par des espaces pour l'affichage
+                var motAffiche = mot.replace("1", "'").replace("_", " ").replace("_", " ").replace("_", " ");
+                // Affichage du picto dans le popup
+                popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+motAffiche+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
             }    
         }
 
@@ -212,7 +224,10 @@ $(document).ready(function() {  /* chargement du DOM */
         if ($('#complexite').text()>2){
             for (var i=0; i<NbPictos3; i++){
             var mot=BanquePictosCategorie.pictos3[i];
-            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+mot+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
+            // remplacement des caractères "_" par des espaces pour l'affichage
+            var motAffiche = mot.replace("1", "'").replace("_", " ").replace("_", " ").replace("_", " ");
+            // Affichage du picto dans le popup
+            popup.append('<div id="'+mot+'" class="CarteCliquable CartePicto Carte'+couleur+' colonne"><div class="colonne"><p class="Mot">'+motAffiche+'</p><img class="picto" src="assets/images/pictos/'+mot+'.png"><audio src="assets/'+cheminSons+'/'+mot+'.mp3" id="audio-'+mot+'"></audio></div></div>');
             }    
         }
 
