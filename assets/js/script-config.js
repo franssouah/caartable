@@ -6,7 +6,7 @@ $(document).ready(function() {  /* chargement du DOM */
     var categories=[];
 
     function fonctionLectureCategories(){
-        // fectch pour récupérer les données de la BDD JSON
+        // fetch pour récupérer les données de la BDD JSON
         fetch('../assets/bdd/BDDpictos.json')
         .then(response => response.json())
         .then(BanquePictos => {
@@ -34,7 +34,7 @@ $(document).ready(function() {  /* chargement du DOM */
             .then(config => {
                 // Modifications
                     //Nb de colonnes :
-                    config.options.nbColonnes = $('#NbColonnesSelect').val();
+                    //config.options.nbColonnes = $('#NbColonnesSelect').val();
 
                     //Nb de pictos par colonne :
                     config.options.hauteurColonnes = $('#NbPictosSelect').val();

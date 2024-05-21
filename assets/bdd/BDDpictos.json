@@ -27,7 +27,7 @@
       { "nom" : "Aliments",
         "couleur" : "Orange",
         "pictos1" : ["eau","gâteau","chocolat","bonbon","jus","pomme","banane"],
-        "pictos2" : ["lait","orange","raisin","poire","pomme_de_terre","carotte","purée","viande","poisson","pizza","pain","oeuf","céréales","crêpes","pâtes","hamburger","fromage","sandwich","frites","riz","salade","semoule","haricots"],
+        "pictos2" : ["lait","orange","raisin","poire","pomme_de_terre","carotte","purée","viande","poisson","pizza","pain","oeuf","céréales","crêpes","pâtes","hamburger","fromage","sandwich","frites","riz","semoule","haricots"],
         "pictos3" : ["tomate","concombre","radis","salade","haricots_verts","citrouille","fraise","framboise","abricot","prune","cerise","melon","kiwi","ananas","pastèque","pamplemousse","sucre","farine","beurre"]
       },
       { "nom" : "Cuisiner",
@@ -81,7 +81,7 @@
       { "nom" : "Moments",
         "couleur" : "Grise",
         "pictos1" : ["maintenant","matin","midi","après-midi","soir","jour","nuit"],
-        "pictos2" : ["hier","aujourdhui","demain","avant","après"],
+        "pictos2" : ["hier","aujourd1hui","demain","avant","après"],
         "pictos3" : []
       },
       { "nom" : "Animaux",
