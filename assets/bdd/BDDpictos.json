@@ -2,7 +2,7 @@
   "categories" : [
       { "nom" : "Phrases",
         "couleur" : "Rose",
-        "pictos1" : ["oui","non","bonjour","merci","s1il_te_plait","au_revoir","je_veux","j1ai","besoin_aide","j1aime","aime_pas","pas_parler","j1ai_mal","je_suis_fatigué","j1ai_faim","mal_tête","mal_ventre"],
+        "pictos1" : ["je_veux","oui","non","bonjour","merci","s1il_te_plait","au_revoir","j1ai","besoin_aide","j1aime","aime_pas","pas_parler","j1ai_mal","je_suis_fatigué","j1ai_faim","mal_tête","mal_ventre"],
         "pictos2" : ["je_vois","ne_sais_pas","j1ai_besoin","j1ai_fini"],
         "pictos3" : []
       },

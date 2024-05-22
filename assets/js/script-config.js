@@ -34,7 +34,7 @@ $(document).ready(function() {  /* chargement du DOM */
             .then(config => {
                 // Modifications
                     //Nb de colonnes :
-                    //config.options.nbColonnes = $('#NbColonnesSelect').val();
+                    config.options.nbColonnes = $('#NbColonnesSelect').val();
 
                     //Nb de pictos par colonne :
                     config.options.hauteurColonnes = $('#NbPictosSelect').val();

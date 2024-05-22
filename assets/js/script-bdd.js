@@ -242,7 +242,7 @@ $(document).ready(function() {  /* chargement du DOM */
     /* 4// Ajustement du CSS 
 *****************************************************/
         // création de la variable dimension selon le nb de colonnes à afficher :
-        var dimension = 97/$('#nbColonnes').text();
+        var dimension = 98/$('#nbColonnes').text();
         //console.log('dimension : '+dimension);
 
         // récupération du nb de pictos par colonne :
