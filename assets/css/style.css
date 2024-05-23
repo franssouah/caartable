@@ -1,3 +1,10 @@
+/******************************************************************
+                    SOMMAIRE
+1. Page principale de l'application
+2. Page configuration
+3. Page Documentation
+*******************************************************************/
+
 :root {
     /* définition des couleurs*/
 	--primary-color: #e6fde6;
@@ -29,13 +36,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content: space-around;        --> pas de flexibilité de la zone d'affichage... si cet ajout est nécessaire, créer une nouvelle classe
-    width: 4.5vw;*/
 }
 
 h3{
     margin: .5rem;
 }
+
+
+/************************************************************/
+/* 1. Page principale de l'application
+*************************************************************/
+
 
 /* boutons
 ****************************************************************/
@@ -65,6 +76,12 @@ h3{
     height: 2rem;
     justify-self: end;
     margin-left: 1rem;
+}
+
+.BoutonMenuImage{
+    object-fit: contain;
+    max-height: 3.5rem;
+    max-width: 3.5rem;
 }
 
 .BoutonMenuImage:hover{
@@ -285,7 +302,7 @@ h3{
 
 
 /************************************************************/
-/* Page configuration
+/* 2. Page configuration
 *************************************************************/
 .cache{
     display: none;
@@ -373,7 +390,7 @@ h3{
 .selectionColonne{
     display: flex;
     flex-direction: column;
-    margin: .4rem;
+    margin: .2rem;
     align-items: center;
 }
 
@@ -448,3 +465,176 @@ h3{
     height: auto;
 }
 
+
+
+/************************************************************/
+/* 3. Page Documentation
+*************************************************************/
+html {
+    scroll-behavior: smooth;
+}
+
+ul, li{
+    margin: .5rem 0 .5rem 0;
+}
+
+.PageDoc{
+    background-color: var(--primary-color);
+    font-size: large;
+}
+.DocumentationMenu{
+    position: fixed;
+    width: 100vw;
+    height: 8rem;
+    top:0;
+    left: 0;
+    background-color: var(--secondary-color);
+}
+
+.DocumentationMenuContenu{
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Documentation{
+    max-width: 75rem;
+    margin-top: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.DocumentationParagraphe{
+    padding: 2rem;
+    border-bottom: 2px solid var(--tertiary-color);
+}
+.DocumentationParagraphe:last-of-type{
+    border-bottom: 0;
+}
+
+/* Menu ***********************/
+
+#menuDoc{
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+#menuDoc > ul{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    justify-content: space-around;
+}
+
+.menuDocItem{
+    width: 20vw;
+    list-style: none;
+    
+}
+.menuDocItem > a{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--blanc);
+    padding: .5rem;
+}
+.menuDocItem > a:hover{
+    color: var(--blanc);
+    background-color: var(--tertiary-color);
+    border-radius: 2rem;
+}
+
+.DocBoutons{
+    height: 5rem;
+    border-bottom: 1px solid var(--blanc);
+}
+
+.DocBouton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--gris);
+    padding: 0 .5rem 0 .5rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+/* Images **************************/
+
+.DocImageLarge{
+    max-width: 60rem;
+    border-radius: 1rem;
+}
+
+.DocImageZoom{
+    max-width: 15rem;
+}
+
+.DocImageIcone{
+    height: 2.5rem;
+    position: relative;
+    top: .5rem;
+    z-index: -99;
+}
+
+.TexteImage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Titres **************************/
+.docH3, .docH4{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.docH2{
+    text-transform: uppercase;
+    font-size: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--blanc);
+    padding: .5rem;
+
+}
+.docH3{
+    color: var(--tertiary-color);
+    background-color: var(--blanc);
+    margin-top: 2rem;
+    padding: .5rem;
+    font-size: 1.5rem;
+}
+
+.docH4{
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+/* Ancres **************************/
+/* solution pour le problème des ancres cachées sous le menu fixe : 
+https://pixelflips.com/blog/anchor-links-with-a-fixed-header */
+.ancre{
+    display: block;
+    height: 8rem; /*hauteur du menu fixe*/
+    margin-top: -8rem; /*idem*/
+    visibility: hidden;
+  }
+
+
+/* footer */
+.footer{
+    width: 100vw;
+    height: 8rem;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+.footerContenu{
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footerContenu > p{
+    color: var(--blanc);
+}
