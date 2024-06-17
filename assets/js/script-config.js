@@ -1,7 +1,16 @@
+//Script config
+
+/* SOMMAIRE */
+//1// récupération liste catégories
+//2// fonctions
+//3// exécution des fonctions
+
 $(document).ready(function() {  /* chargement du DOM */
-    
-    /*Requête pour récupérer la liste des catégories
-    *********************************************************/
+
+
+
+    /* 1// Requête pour récupérer la liste des catégories
+*********************************************************/
     $NbCategories="";
     $categories=[];
 
@@ -23,8 +32,9 @@ $(document).ready(function() {  /* chargement du DOM */
 
 
 
-    /* Fonctions 
-    *********************************************************/
+
+    /* 2// Fonctions 
+*********************************************************/
     
     function fonctionEcritureConfig(){
 
@@ -133,7 +143,7 @@ $(document).ready(function() {  /* chargement du DOM */
                 // affichage de la valeur sauvegardée :
                 $('#Colonne'+$i+'Largeur').append('<option value="'+$sessionConfigCustom.largeurColonnes[$i]+'" selected>'+$sessionConfigCustom.largeurColonnes[$i]+'</option>');
                 // Affichage des autres options :
-                for ($j=1; $j<4; $j++){
+                for ($j=1; $j<7; $j++){
                     if ($j!=$sessionConfigCustom.largeurColonnes[$i]){
                         $('#Colonne'+$i+'Largeur').append('<option value="'+$j+'">'+$j+'</option>');
                     }
@@ -204,8 +214,10 @@ $(document).ready(function() {  /* chargement du DOM */
     }
 
 
-    /* exécution des fonctions 
-    ************************************************/
+
+
+    /* 3// exécution des fonctions 
+************************************************/
     // chargement de la BDD
     fonctionLectureCategories();
 

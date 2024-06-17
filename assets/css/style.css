@@ -47,7 +47,6 @@ h3{
 /* 1. Page principale de l'application
 *************************************************************/
 
-
 /* boutons
 ****************************************************************/
 .bouton{
@@ -68,7 +67,6 @@ h3{
     max-height: 4rem;
     max-width: 4.5rem;
 }
-
 
 /* bouton menu */
 .BoutonMenu{
@@ -256,24 +254,16 @@ h3{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /*align-items: center;*/
 }
-
 
 /* Popups
 ***************************************************************/
 .popup {
-    /*width: 7rem;
-    height: 34.5rem;*/
     position: fixed;
     top: 0;
-    margin-top: 9.6rem;
     z-index: 99;
     visibility: hidden;
-    /*display: none;*/
-    /*backdrop-filter: grayscale(1) blur(5px);*/
     border-radius: 1rem;
-    /*border: 5px solid black;*/
     background-color: var(--noir);
     border: 5px solid var(--noir);
   }
@@ -282,7 +272,7 @@ h3{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    align-items: flex-start;
     left: 1rem;
 }
 
@@ -562,9 +552,23 @@ ul, li{
 
 /* Images **************************/
 
+.DocImageConteneur{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+figcaption{
+    text-align: center;
+    font-style: italic;
+    color: var(--tertiary-color);
+}
+
 .DocImageLarge{
-    max-width: 60rem;
+    max-width: 55rem;
     border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .DocImageZoom{
@@ -618,7 +622,7 @@ https://pixelflips.com/blog/anchor-links-with-a-fixed-header */
     height: 8rem; /*hauteur du menu fixe*/
     margin-top: -8rem; /*idem*/
     visibility: hidden;
-  }
+}
 
 
 /* footer */

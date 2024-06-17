@@ -62,8 +62,8 @@
       },
       { "nom" : "Maths",
         "couleur" : "Orange",
-        "pictos1" : ["calculer","compter","plus","moins","égal","fois","zéro","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix"],
-        "pictos2" : [],
+        "pictos1" : ["zéro","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix"],
+        "pictos2" : ["calculer","compter","plus","moins","égal","fois"],
         "pictos3" : []
       },
       { "nom" : "Lieux",

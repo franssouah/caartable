@@ -1,6 +1,18 @@
+//Script boutons
+
+/* SOMMAIRE */
+//1// récupération de la BDD
+//2// sélection des zones et boutons
+//3// fonctions au clic
+//4// gestion des popups
+
 $(document).ready(function() {  /* chargement du DOM */
 
-// récupération de la BDD (nécessaire pour le fonctionnement du boutonRecherche)
+
+
+    /* 1// récupération de la BDD (nécessaire pour le fonctionnement du boutonRecherche)
+*********************************************************/
+
 function fonctionAccesBDD(){
     fetch('assets/bdd/BDDpictos.json')
         .then(response => response.json())
@@ -17,6 +29,12 @@ fonctionAccesBDD();
 
 setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel ajax (sinon le mappage des carte cliquables ne fonctionne pas)
 
+
+
+
+    /* 2// sélection des zones et boutons
+*********************************************************/
+
     /* sélection des boutons
     ***************************************************/
     const BoutonParler=$(".BoutonParler");
@@ -28,6 +46,13 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
     /* sélection des zones
     ***************************************************/
     const ZoneAffichagePictos=$(".ZoneAffichagePictos");
+
+
+
+
+
+    /* 3// fonctions au clic
+*********************************************************/
 
     /* Au clic sur un picto
     ***************************************************/
@@ -139,6 +164,12 @@ setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel aj
             }   
     })
 
+
+
+    
+
+    /* 4// gestion des popups
+*********************************************************/
     
     /* Ouverture des popups au clic sur boutons Catégories
     **************************************************/

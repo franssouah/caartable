@@ -5,9 +5,11 @@
 //2// Requête fetch pour récupérer la BDD
 //3// fonctions d'affichage des pictos
 //4// Ajustement du CSS 
-//5// Appels 
+//5// Exécution des fonctions 
 
 $(document).ready(function() {  /* chargement du DOM */
+
+
 
     /* 1// Chargement des paramètres de configuration
 *********************************************************/
@@ -82,13 +84,16 @@ $(document).ready(function() {  /* chargement du DOM */
         }
     }
 
-    // vérification de l'existance d'une config custom
+    // vérification de l'existence d'une config custom
     if (localStorage.getItem("ConfigCustom")===null){
         fonctionLectureConfig();
     }
     // lecture de la config custom
     fonctionLectureConfigCustom();
     
+
+
+
 
     /* 2// Requête fetch pour récupérer la BDD
 *********************************************************/
@@ -98,8 +103,6 @@ $(document).ready(function() {  /* chargement du DOM */
             .then(data => {
                 $BanquePictos = data;
                 $NbCategories = $BanquePictos.categories.length;
-                // stockage dans le HTML pour réutilisation par le moteur de recherche
-                //$('#bdd').append('<div class="contenuBDD">'+$BanquePictos+'</div>');
             })
             .catch(error => console.error('Erreur lors du chargement du fichier BDDpictos.JSON :', error));
     }
@@ -109,6 +112,8 @@ $(document).ready(function() {  /* chargement du DOM */
     fonctionAccesBDD();
     
     
+
+
     
     /* 3// fonctions d'affichage des pictos
 *********************************************************/
@@ -120,24 +125,18 @@ $(document).ready(function() {  /* chargement du DOM */
 
         // choix de la voix et paramétrage du chemin des sons
         $cheminSons="";
-        if ($('#voix').text()=== "fille"){
-            $cheminSons = "sonsF";
-        }
-        if ($('#voix').text()=== "garçon"){
-            $cheminSons = "sonsG";
-        }
+        if ($('#voix').text()=== "fille"){$cheminSons = "sonsF";}
+        if ($('#voix').text()=== "garçon"){$cheminSons = "sonsG";}
                 
         // extraction de la bonne catégorie
         for (i=0 ; i<$NbCategories; i++){
-            if ($BanquePictos.categories[i].nom==categorie){
-                $BanquePictosCategorie=$BanquePictos.categories[i];
-            }
+            if ($BanquePictos.categories[i].nom==categorie){$BanquePictosCategorie=$BanquePictos.categories[i];}
         }
         $couleur = $BanquePictosCategorie.couleur;
 
         // injection des pictos 1 dans la colonne
             // Nb de pictos en fonction de la hauteur et largeur choisies
-            for (i=0; i<((largeur*$hauteur)-1); i++){
+            for (i=0; i<((largeur*$hauteur)-1) && i<$BanquePictosCategorie.pictos1.length; i++){
                 $mot=$BanquePictosCategorie.pictos1[i];
 
                 // remplacement des caractères "_" par des espaces et "1" par "'" pour l'affichage
@@ -145,10 +144,37 @@ $(document).ready(function() {  /* chargement du DOM */
 
                 // Affichage du picto dans la colonne
                 $colonne.append('<div id="'+$mot+'" class="CarteCliquable CartePicto Carte'+$couleur+' colonne"><div class="colonne"><p class="Mot">'+$motAffiche+'</p><img class="picto" src="assets/images/pictos/'+$mot+'.png"><audio src="assets/'+$cheminSons+'/'+$mot+'.mp3" id="audio-'+$mot+'"></audio></div></div>');
-                }
+            }
 
-                // Ajustement de la largeur
-                $colonne.css('width', (largeur*$dimension)+'vw');
+            // Ajustement de la largeur
+            $colonne.css('width', (largeur*$dimension)+'vw');
+
+            console.log(largeur*$hauteur);
+        
+        // injection des pictos 2 dans la colonne SI NECESSAIRE
+            if (largeur*$hauteur>$BanquePictosCategorie.pictos1.length){
+                for (i=0; i<((largeur*$hauteur)-$BanquePictosCategorie.pictos1.length-1) && i<$BanquePictosCategorie.pictos2.length; i++){
+                    $mot=$BanquePictosCategorie.pictos2[i];
+    
+                    // remplacement des caractères "_" par des espaces et "1" par "'" pour l'affichage
+                    $motAffiche = $mot.replace("1", "'").replace("_", " ").replace("_", " ").replace("_", " ");
+    
+                    // Affichage du picto dans la colonne
+                    $colonne.append('<div id="'+$mot+'" class="CarteCliquable CartePicto Carte'+$couleur+' colonne"><div class="colonne"><p class="Mot">'+$motAffiche+'</p><img class="picto" src="assets/images/pictos/'+$mot+'.png"><audio src="assets/'+$cheminSons+'/'+$mot+'.mp3" id="audio-'+$mot+'"></audio></div></div>');
+                }
+            }
+        // injection des pictos 3 dans la colonne SI NECESSAIRE
+        if (largeur*$hauteur>($BanquePictosCategorie.pictos1.length+$BanquePictosCategorie.pictos2.length)){
+            for (i=0; i<((largeur*$hauteur)-($BanquePictosCategorie.pictos1.length+$BanquePictosCategorie.pictos2.length)-1) && i<$BanquePictosCategorie.pictos3.length; i++){
+                $mot=$BanquePictosCategorie.pictos3[i];
+
+                // remplacement des caractères "_" par des espaces et "1" par "'" pour l'affichage
+                $motAffiche = $mot.replace("1", "'").replace("_", " ").replace("_", " ").replace("_", " ");
+
+                // Affichage du picto dans la colonne
+                $colonne.append('<div id="'+$mot+'" class="CarteCliquable CartePicto Carte'+$couleur+' colonne"><div class="colonne"><p class="Mot">'+$motAffiche+'</p><img class="picto" src="assets/images/pictos/'+$mot+'.png"><audio src="assets/'+$cheminSons+'/'+$mot+'.mp3" id="audio-'+$mot+'"></audio></div></div>');
+            }
+        }
             
         //Ajout du bouton + pour la catégorie
         $colonne.append('<div id="'+categorie+'" class="CarteCliquableCategorie CarteCliquable'+categorie+' CartePicto Carte'+$couleur+' colonne"><div class="colonne"><p class="Mot MotGras">'+categorie+'</p><img class="picto" src="assets/images/pictos/'+categorie+'.png"></div></div>');
@@ -238,6 +264,9 @@ $(document).ready(function() {  /* chargement du DOM */
     }
 
 
+
+
+
     /* 4// Ajustement du CSS 
 *****************************************************/
         // création de la variable dimension selon le nb de colonnes à afficher :
@@ -264,7 +293,10 @@ $(document).ready(function() {  /* chargement du DOM */
             // --> non fonctionnel *******************************************//
  
 
-    /* 5// Appels 
+
+
+
+    /* 5// Exécution des fonctions 
 **************************************************/
 
     setTimeout(() =>{   //Ajout d'un timer pour attendre le chargement de l'appel ajax (sinon le mappage des cartes cliquables ne fonctionne pas)
