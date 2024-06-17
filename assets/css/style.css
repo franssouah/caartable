@@ -260,7 +260,7 @@ h3{
 ***************************************************************/
 .popup {
     position: fixed;
-    top: 0;
+    top: 9.7rem;
     z-index: 99;
     visibility: hidden;
     border-radius: 1rem;
